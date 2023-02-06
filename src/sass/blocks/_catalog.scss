@@ -37,8 +37,19 @@
             border: none;
         }
     }
-    &-item{
+    &__content{
         margin-top: 57px;
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &_active{
+            display: flex;
+        }
+        
+    }
+    &-item{
+        margin-bottom: 20px;
+        
         width: 303px;
         height: 442px;
         border: 2px solid #E8E8E8;
@@ -73,6 +84,7 @@
             line-height: 14px;
             color: $main-color;
             text-align: center;
+            text-transform: uppercase;
             &:hover{
                 color: $main-color;
             }
@@ -147,6 +159,22 @@
             &_active{
                 transform: translateX(-100%);
                 margin-left: 0px;
+            }
+        }
+        &__back{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(calc(-50% - 19px));
+            display: block;
+            text-decoration-line: underline;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+            color: $main-color;
+            text-transform: uppercase;
+            &:hover{
+                color: $main-color;
             }
         }
     }
