@@ -36,6 +36,21 @@
             }
         }
     }
+   
+    
+    .carousel{
+        &__inner{
+            width: 100%;
+              div{
+                img{
+                    width: 572px;
+                }
+              }  
+            
+        }
+    }
+        
+    
 }
 
 @media (max-width: 575px) {
@@ -135,6 +150,17 @@
             margin-left: 20px;
         }
     }
+    .carousel{
+        &__inner{
+            width: 426px;
+              div{
+                img{
+                    width: 426px;
+                }
+              }  
+            
+        }
+    }
 }
 @media (max-width: 420px){
     .header{
@@ -173,6 +199,18 @@
         }
         &__link{
             font-size: 13px;
+        }
+    }
+    .carousel{
+        &__inner{
+            width: 310px;
+              div{
+                img{
+                    width: 310px;
+                    
+                }
+              }  
+            
         }
     }
    
