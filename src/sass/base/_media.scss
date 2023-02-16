@@ -9,7 +9,7 @@
   
 @media (max-width: 767px){
     .container {
-        max-width: 544px;
+        max-width: 540px;
     }
     .header{
         &__logo{
@@ -188,6 +188,11 @@
             text-align: center;
         }
     }
+    .footer{
+        &__info{
+            max-width: 100%;
+        }
+    }
 }
 @media (max-width: 420px){
     .header{
@@ -264,6 +269,12 @@
     .catalog-item {
         margin-left: 2px;
         width: 300px;
+    }
+    .footer{
+       
+        &__social-item{
+            margin: 0 9px;
+        }
     }
    
         
