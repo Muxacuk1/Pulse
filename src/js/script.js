@@ -57,5 +57,34 @@ $(document).ready(function(){
         $('.overlay, #order').fadeIn('slow');
       })
     });
+
+    $('#consultation-form').validate();
+    $('#consultation form').validate({
+      rules: {
+        name:{
+          required: true,
+          minlength: 2
+        },
+        phone:"required",
+        email:{
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: {
+          required: "Будь ласка, вкажіть своє ім'я",
+          minlength: jQuery.validator.format("Потрібно принаймні {0} символів!")
+        },
+        phone: "Будь ласка, вкажіть свій телефон",
+        email: {
+          required: "Нам потрібна ваша електронна адреса, щоб зв'язатися з вами",
+          email: "Ваша електронна адреса має бути у форматі name@domain.com"
+        }
+      }
+    }); 
+    
+    $('#order form').validate();
+    
     
   });
