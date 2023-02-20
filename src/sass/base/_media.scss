@@ -193,6 +193,12 @@
             max-width: 100%;
         }
     }
+    .modal{
+        &__close{
+            top: 10px;
+            right: 0px;
+        }
+    }
 }
 @media (max-width: 420px){
     .header{
@@ -210,7 +216,6 @@
             align-items: center;
         }
     }
-    
     .title{
         font-size: 22px; 
         }
@@ -275,6 +280,12 @@
         &__social-item{
             margin: 0 9px;
         }
+    }
+    .feed-form{
+        width: 100%;
+    }
+    .modal{
+        width: 280px;
     }
    
         
