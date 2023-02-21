@@ -47,9 +47,7 @@ $(document).ready(function(){
     $('.modal__close').on('click', function(){
       $('.overlay, #consultation, #thanks, #order'). fadeOut();
     });
-    // $('.button_mini').on('click', function(){
-    //   $('.overlay, #order').fadeIn('slow');
-    // });
+   
 
     $('.button_mini').each(function(i) {
       $(this).on('click', function(){
@@ -58,33 +56,36 @@ $(document).ready(function(){
       })
     });
 
-    $('#consultation-form').validate();
-    $('#consultation form').validate({
-      rules: {
-        name:{
-          required: true,
-          minlength: 2
+  
+    
+    function valideForm (form){
+      $(form).validate({
+        rules: {
+          name:{
+            required: true,
+            minlength: 2
+          },
+          phone:"required",
+          email:{
+            required: true,
+            email: true
+          }
         },
-        phone:"required",
-        email:{
-          required: true,
-          email: true
+        messages: {
+          name: {
+            required: "Будь ласка, вкажіть своє ім'я",
+            minlength: jQuery.validator.format("Потрібно принаймні {0} символів!")
+          },
+          phone: "Будь ласка, вкажіть свій телефон",
+          email: {
+            required: "Нам потрібна ваша електронна адреса, щоб зв'язатися з вами",
+            email: "Ваша електронна адреса має бути у форматі name@domain.com"
+          }
         }
-      },
-      messages: {
-        name: {
-          required: "Будь ласка, вкажіть своє ім'я",
-          minlength: jQuery.validator.format("Потрібно принаймні {0} символів!")
-        },
-        phone: "Будь ласка, вкажіть свій телефон",
-        email: {
-          required: "Нам потрібна ваша електронна адреса, щоб зв'язатися з вами",
-          email: "Ваша електронна адреса має бути у форматі name@domain.com"
-        }
-      }
-    }); 
-    
-    $('#order form').validate();
-    
-    
+      }); 
+    }
+    valideForm('#consultation form');
+    valideForm('#consultation-form');
+    valideForm('#order form');
+
   });
