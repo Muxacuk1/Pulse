@@ -90,4 +90,25 @@ $(document).ready(function(){
 
     $('input[name=phone]').mask("+38 (099) 999-99-99");
 
+    $('form').submit(function(e){
+      e.preventDefault();
+
+      if(!$(this).valid()){
+        return;
+      };
+
+      $.ajax({
+        type: "POST",
+        URL: "mailer/smart.php",
+        data: $(this). serialize()
+      }).done(function() {
+        $(this).find("input").val("");
+        $('#consultation , #order').fadeOut();
+        $('.overlay, #thaks').fadeIn('slow');
+
+        $('form').trigger("reset");
+      });
+      return false;
+    });
+
   });
