@@ -21,6 +21,7 @@
             text-align: center;
             display: block;
             margin: 0 auto;
+            
         }
         span{
             margin: 35px 0 20px 0;
@@ -39,4 +40,13 @@
             line-height: 18px;
         }
     }
+    &__icon{
+        &_animated{
+            animation: heardbeat 1.5s ease infinite ;
+            &:hover{
+                animation-play-state: paused;
+            }
+        }
+    }
+    
 }
