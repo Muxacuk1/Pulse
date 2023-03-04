@@ -125,4 +125,7 @@ $(document).ready(function(){
       return false;
     });
 
+    
+
   });
+  new WOW().init();
