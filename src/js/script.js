@@ -96,15 +96,14 @@ $(document).ready(function(){
       if(!$(this).valid()){
         return;
       };
-
       $.ajax({
         type: "POST",
-        URL: "mailer/smart.php",
+        url: "mailer/smart.php",
         data: $(this). serialize()
       }).done(function() {
         $(this).find("input").val("");
         $('#consultation , #order').fadeOut();
-        $('.overlay, #thaks').fadeIn('slow');
+        $('.overlay, #thanks').fadeIn('slow');
 
         $('form').trigger("reset");
       });
